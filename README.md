@@ -1,4 +1,6 @@
 # reflections-on-sql
 Sql client builded with Electron and React
 
-Run app: npm start
+To run app:
+1) npm install
+2) npm start
