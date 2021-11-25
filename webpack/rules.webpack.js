@@ -1,4 +1,5 @@
 const { getThemeVariables } = require('antd/dist/theme');
+const path = require('path')
 
 module.exports = [
   {
@@ -51,9 +52,25 @@ module.exports = [
               compact: true, // Enable compact mode
             }),
             javascriptEnabled: true,
+            paths: [path.resolve(__dirname, 'src')]
           },
         },
       },
     ],
   },
+  {
+    test: /\.css$/,
+    use: [
+      {
+        loader: 'style-loader', // creates style nodes from JS strings
+      },
+      {
+        loader: 'css-loader', // translates CSS into CommonJ
+      },
+    ],
+  },
+  {
+    test: /\.ttf$/,
+    use: ['file-loader']
+  }
 ]
